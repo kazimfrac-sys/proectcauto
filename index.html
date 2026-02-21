@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ProectcAuto — Запчасти для китайских авто из Китая в Россию</title>
+
+  <meta name="description" content="ProectcAuto — подберем и доставим запчасти для китайских автомобилей (Geely, Changan, Haval, Li, ZEEKR, Chery) из Китая в Россию. Срок 25–35 дней. WhatsApp/Telegram 24/7." />
+  <meta name="keywords" content="запчасти китайские авто из Китая, доставка запчастей Китай Россия, кузовные детали Китай, Geely запчасти, Changan запчасти, Haval запчасти, Li запчасти, Zeekr запчасти, Chery запчасти, поставщик запчастей Китай" />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --panel2:#111c28;
+      --text:#e7edf6;
+      --muted:#9fb0c7;
+      --line:rgba(231,237,246,.12);
+      --accent:#ff2d2d;
+      --accent2:#ff6a00;
+      --ok:#22c55e;
+
+      --radius:18px;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+
+      --max:1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(900px 520px at 10% 10%, rgba(255,45,45,.18), transparent 55%),
+        radial-gradient(800px 480px at 90% 10%, rgba(255,106,0,.16), transparent 55%),
+        radial-gradient(900px 520px at 50% 100%, rgba(34,197,94,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.35;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 56px}
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.62);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:var(--max); margin:0 auto; padding:12px 18px;
+      display:flex; align-items:center; gap:12px; justify-content:space-between;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:210px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.25), transparent 70%),
+        linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 20px rgba(255,45,45,.15);
+      display:grid; place-items:center;
+    }
+    .logo svg{width:22px; height:22px; opacity:.95}
+    .brand-title{font-weight:800; letter-spacing:.3px}
+    .brand-sub{font-size:12px; color:var(--muted); margin-top:1px}
+
+    .nav{
+      display:flex; align-items:center; gap:14px;
+    }
+    .nav a{
+      font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
+    .right-actions{display:flex; align-items:center; gap:10px}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      cursor:pointer;
+      transition:.18s ease;
+      font-weight:650;
+      font-size:13px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.05)}
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 14px 30px rgba(255,45,45,.18);
+    }
+    .btn.primary:hover{filter:saturate(1.05) brightness(1.02)}
+    .btn.ghost{background:transparent}
+    .btn.small{padding:8px 10px; font-size:12px}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* Hero */
+    .hero{
+      padding-top:26px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr; }
+      .nav{display:none}
+      .brand{min-width:auto}
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-left{padding:26px 22px 22px}
+    .h1{
+      margin:10px 0 12px;
+      font-size: 40px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+      font-weight:900;
+    }
+    @media (max-width: 520px){
+      .h1{font-size: 32px;}
+    }
+
+    .accent{
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .lead{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 62ch;
+    }
+
+    .hero-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .hero-meta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+
+    .hero-right{padding:16px}
+    .mini{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(17,28,40,.55);
+      margin-bottom:12px;
+    }
+    .mini h3{margin:0 0 8px; font-size:14px}
+    .mini p{margin:0; color:var(--muted); font-size:13px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 520px){ .grid2{grid-template-columns:1fr} }
+
+    .kpi{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .kpi b{display:block; font-size:18px}
+    .kpi span{color:var(--muted); font-size:12px}
+
+    /* Sections */
+    section{margin-top:18px}
+    .section{
+      padding:22px;
+    }
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-bottom:14px;
+    }
+    .section-title h2{
+      margin:0; font-size:18px; letter-spacing:.2px;
+    }
+    .section-title p{margin:0; color:var(--muted); font-size:13px}
+
+    .features{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    @media (max-width: 920px){ .features{grid-template-columns:1fr} }
+    .feature{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .feature b{display:block; margin-bottom:6px}
+    .feature div{color:var(--muted); font-size:13px}
+
+    .services{
+      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
+    }
+    @media (max-width: 920px){ .services{grid-template-columns:1fr} }
+    .service{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      position:relative;
+      overflow:hidden;
+    }
+    .service:before{
+      content:"";
+      position:absolute; inset:-60px -120px auto auto;
+      width:240px; height:240px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,45,45,.18), transparent 65%);
+      transform: rotate(12deg);
+      pointer-events:none;
+    }
+    .service h3{margin:0 0 8px; font-size:15px}
+    .service ul{margin:0; padding-left:18px; color:var(--muted); font-size:13px}
+    .tagline{margin-top:10px; color:var(--muted); font-size:12px}
+
+    .steps{
+      display:grid; grid-template-columns: repeat(5, 1fr); gap:10px;
+    }
+    @media (max-width: 920px){ .steps{grid-template-columns:1fr 1fr} }
+    @media (max-width: 520px){ .steps{grid-template-columns:1fr} }
+    .step{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .step .n{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:28px; height:28px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      font-weight:900; margin-bottom:10px;
+      box-shadow:0 10px 20px rgba(255,45,45,.15);
+    }
+    .step b{display:block; margin-bottom:6px}
+    .step span{color:var(--muted); font-size:13px}
+
+    .split{
+      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){ .split{grid-template-columns:1fr} }
+
+    /* Form */
+    label{display:block; font-size:12px; color:var(--muted); margin:0 0 6px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      outline:none;
+    }
+    input:focus, textarea:focus{border-color: rgba(255,45,45,.55)}
+    textarea{min-height:110px; resize:vertical}
+    .form-row{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    @media (max-width: 520px){ .form-row{grid-template-columns:1fr} }
+    .form-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .note{margin-top:10px; color:var(--muted); font-size:12px}
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      padding:18px 0 0;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .foot{
+      display:flex; flex-wrap:wrap; gap:10px;
+      justify-content:space-between; align-items:center;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+
+    .hide{display:none !important;}
+    .langswitch{min-width:110px}
+  </style>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- simple "shield + bolt" icon -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l7 3v7c0 5-3.5 9-7 10-3.5-1-7-5-7-10V5l7-3z" stroke="white" stroke-width="1.6" opacity="0.9"/>
+            <path d="M13.5 6.5L9 13h3l-1.5 4.5L15 11h-3l1.5-4.5z" fill="white" opacity="0.92"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">ProectcAuto</div>
+          <div class="brand-sub" data-i18n="sub">Запчасти из Китая → Россия</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Навигация">
+        <a href="#why" data-i18n="nav_why">Почему мы</a>
+        <a href="#services" data-i18n="nav_services">Услуги</a>
+        <a href="#how" data-i18n="nav_how">Как работаем</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contacts" data-i18n="nav_contacts">Контакты</a>
+      </nav>
+
+      <div class="right-actions">
+        <button class="btn small ghost langswitch" id="langBtn" type="button">RU / EN</button>
+        <a class="btn primary" href="#contacts" data-i18n="cta_top">Оставить заявку</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card hero-left">
+        <div class="pill" data-i18n="pill">24/7 • WhatsApp/Telegram • 25–35 дней</div>
+        <h1 class="h1">
+          <span data-i18n="h1_1">Запчасти для</span>
+          <span class="accent" data-i18n="h1_2">китайских автомобилей</span>
+          <span data-i18n="h1_3">из Китая в Россию</span>
+        </h1>
+        <p class="lead" data-i18n="lead">
+          Подбор по VIN/фото, проверка, сбор на складе в Гуанчжоу и доставка в РФ. Оригинал, аналоги и контрактные запчасти.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" id="btnWhatsApp" target="_blank" rel="noopener" data-i18n="cta_wa">Написать в WhatsApp</a>
+          <a class="btn" id="btnTelegram" target="_blank" rel="noopener" data-i18n="cta_tg">Написать в Telegram</a>
+          <a class="btn" href="#services" data-i18n="cta_services">Смотреть услуги</a>
+        </div>
+
+        <div class="hero-meta">
+          <span class="pill" data-i18n="brands">
+            Бренды: Geely • Changan • Haval • Li • ZEEKR • Chery
+          </span>
+          <span class="pill" data-i18n="geo">Работаем по РФ и СНГ • Фокус: Северный Кавказ</span>
+        </div>
+      </div>
+
+      <div class="card hero-right">
+        <div class="mini">
+          <h3 data-i18n="mini_title">Кто мы</h3>
+          <p data-i18n="mini_text">
+            Меня зовут Казим. Я живу в Гуанчжоу и вместе с командой профессионалов подбираю и отправляю запчасти для китайских автомобилей под запрос клиента.
+          </p>
+        </div>
+
+        <div class="grid2">
+          <div class="kpi">
+            <b>25–35</b>
+            <span data-i18n="kpi_1">дней доставка со склада</span>
+          </div>
+          <div class="kpi">
+            <b data-i18n="kpi_2a">Оригинал / Аналоги</b>
+            <span data-i18n="kpi_2b">под ваш бюджет</span>
+          </div>
+          <div class="kpi">
+            <b data-i18n="kpi_3a">Штучно / Контейнер</b>
+            <span data-i18n="kpi_3b">любой объем</span>
+          </div>
+          <div class="kpi">
+            <b data-i18n="kpi_4a">Проверка</b>
+            <span data-i18n="kpi_4b">перед отправкой</span>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="mini">
+          <h3 data-i18n="mini2_title">Быстрая заявка</h3>
+          <p data-i18n="mini2_text">Нажмите и напишите: VIN / модель / год / что нужно — ответим быстро.</p>
+          <div class="hero-actions" style="margin-top:10px">
+            <a class="btn primary" id="btnWhatsApp2" target="_blank" rel="noopener" data-i18n="cta_wa2">WhatsApp</a>
+            <a class="btn" id="btnTelegram2" target="_blank" rel="noopener" data-i18n="cta_tg2">Telegram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY -->
+    <section id="why" class="card section">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="why_title">Почему ProectcAuto</h2>
+          <p data-i18n="why_sub">Сделано просто: быстро связаться, точно подобрать, спокойно отправить.</p>
+        </div>
+        <span class="pill" data-i18n="why_pill">Гуанчжоу • Проверенные поставщики</span>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <b data-i18n="f1_t">Прямые поставщики</b>
+          <div data-i18n="f1_d">Работаем с проверенными фабриками и продавцами в Китае.</div>
+        </div>
+        <div class="feature">
+          <b data-i18n="f2_t">Свой склад в Китае</b>
+          <div data-i18n="f2_d">Собираем, сортируем, упаковываем — без лишней суеты.</div>
+        </div>
+        <div class="feature">
+          <b data-i18n="f3_t">Подбор по VIN</b>
+          <div data-i18n="f3_d">Чтобы деталь подошла с первого раза — по VIN/фото/каталогу.</div>
+        </div>
+        <div class="feature">
+          <b data-i18n="f4_t">Любые объемы</b>
+          <div data-i18n="f4_d">От одной детали до контейнерных поставок.</div>
+        </div>
+        <div class="feature">
+          <b data-i18n="f5_t">Под ваш бюджет</b>
+          <div data-i18n="f5_d">Оригинал, аналоги и контрактные запчасти — под задачу.</div>
+        </div>
+        <div class="feature">
+          <b data-i18n="f6_t">24/7 на связи</b>
+          <div data-i18n="f6_d">WhatsApp / Telegram / Email — отвечаем оперативно.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="card section">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="srv_title">Услуги</h2>
+          <p data-i18n="srv_sub">Все просто: вы даете запрос — мы закрываем под ключ.</p>
+        </div>
+        <span class="pill" data-i18n="srv_pill">Цена: по запросу</span>
+      </div>
+
+      <div class="services">
+        <div class="service">
+          <h3 data-i18n="s1_t">Кузовные детали</h3>
+          <ul>
+            <li data-i18n="s1_1">Бамперы, крылья, двери</li>
+            <li data-i18n="s1_2">Оптика: фары, фонари</li>
+            <li data-i18n="s1_3">Пластик, крепеж, элементы</li>
+            <li data-i18n="s1_4">Подбор по VIN/фото</li>
+          </ul>
+          <div class="tagline" data-i18n="s1_tag">Для Geely / Changan / Haval / Li / ZEEKR / Chery и других</div>
+        </div>
+
+        <div class="service">
+          <h3 data-i18n="s2_t">Запчасти и расходники</h3>
+          <ul>
+            <li data-i18n="s2_1">Фильтра, свечи, ремни</li>
+            <li data-i18n="s2_2">Тяги, наконечники, подвеска</li>
+            <li data-i18n="s2_3">Тормозная система</li>
+            <li data-i18n="s2_4">Оригинал / Аналоги / Контрактные</li>
+          </ul>
+          <div class="tagline" data-i18n="s2_tag">Подбор под бюджет и сроки</div>
+        </div>
+
+        <div class="service">
+          <h3 data-i18n="s3_t">Подбор под заказ</h3>
+          <ul>
+            <li data-i18n="s3_1">По VIN и комплектации</li>
+            <li data-i18n="s3_2">По фото детали / маркировке</li>
+            <li data-i18n="s3_3">Подбор нескольких вариантов цены</li>
+            <li data-i18n="s3_4">Консультация по совместимости</li>
+          </ul>
+          <div class="tagline" data-i18n="s3_tag">Минимизируем ошибки при заказе</div>
+        </div>
+
+        <div class="service">
+          <h3 data-i18n="s4_t">Логистика и доставка</h3>
+          <ul>
+            <li data-i18n="s4_1">Прием на складе в Гуанчжоу</li>
+            <li data-i18n="s4_2">Сбор, сортировка, упаковка</li>
+            <li data-i18n="s4_3">Доставка в РФ</li>
+            <li data-i18n="s4_4">Срок: 25–35 дней со склада</li>
+          </ul>
+          <div class="tagline" data-i18n="s4_tag">Штучно или контейнерами</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="card section">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="how_title">Как мы работаем</h2>
+          <p data-i18n="how_sub">5 шагов — и запчасти у вас.</p>
+        </div>
+        <span class="pill" data-i18n="how_pill">Пишите VIN / модель / год</span>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <b data-i18n="st1_t">Запрос</b>
+          <span data-i18n="st1_d">Вы пишете: VIN / модель / год / список деталей.</span>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <b data-i18n="st2_t">Подбор</b>
+          <span data-i18n="st2_d">Подбираем оригинал/аналог/контракт под задачу.</span>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <b data-i18n="st3_t">Согласование</b>
+          <span data-i18n="st3_d">Согласуем цену, сроки и вариант доставки.</span>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <b data-i18n="st4_t">Склад</b>
+          <span data-i18n="st4_d">Принимаем на складе, проверяем, упаковываем.</span>
+        </div>
+        <div class="step">
+          <div class="n">5</div>
+          <b data-i18n="st5_t">Отправка</b>
+          <span data-i18n="st5_d">Доставка в РФ. Средний срок: 25–35 дней.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF (simple placeholders) -->
+    <section class="card section">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="proof_title">Кейсы и факты</h2>
+          <p data-i18n="proof_sub">Сюда добавим реальные фото/кейсы — ты потом отправишь материалы.</p>
+        </div>
+        <span class="pill" data-i18n="proof_pill">Обслуживаем частных клиентов, СТО и таксопарки</span>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <b data-i18n="c1_t">Таксопарк</b>
+          <div data-i18n="c1_d">Комплектация расходниками и ходовой под регулярные поставки.</div>
+        </div>
+        <div class="feature">
+          <b data-i18n="c2_t">Кузов под заказ</b>
+          <div data-i18n="c2_d">Фара/бампер/крыло: подбор, проверка, упаковка, доставка.</div>
+        </div>
+        <div class="feature">
+          <b data-i18n="c3_t">СТО</b>
+          <div data-i18n="c3_d">Закрываем список деталей “под ремонт” одной поставкой.</div>
+        </div>
+      </div>
+      <div class="note" data-i18n="proof_note">
+        Примечание: отзывы/скрины добавим, когда вы отправите материалы (или я подготовлю блоки и вы замените).
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="card section">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="faq_title">FAQ</h2>
+          <p data-i18n="faq_sub">Коротко и по делу.</p>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature"><b data-i18n="q1">Можно заказать одну деталь?</b><div data-i18n="a1">Да. Работаем и штучно, и оптом/контейнером.</div></div>
+        <div class="feature"><b data-i18n="q2">Есть оригинальные запчасти?</b><div data-i18n="a2">Да. Также подбираем качественные аналоги и контрактные детали.</div></div>
+        <div class="feature"><b data-i18n="q3">Подбор по VIN?</b><div data-i18n="a3">Да, чтобы исключить ошибки по совместимости.</div></div>
+        <div class="feature"><b data-i18n="q4">Сроки доставки?</b><div data-i18n="a4">25–35 дней с момента поступления на наш склад в Гуанчжоу.</div></div>
+        <div class="feature"><b data-i18n="q5">С какими брендами работаете?</b><div data-i18n="a5">Geely, Changan, Haval, Li, ZEEKR, Chery и другие.</div></div>
+        <div class="feature"><b data-i18n="q6">Как быстрее всего получить ответ?</b><div data-i18n="a6">Напишите в WhatsApp/Telegram: VIN, модель, год, список деталей.</div></div>
+      </div>
+    </section>
+
+    <!-- CONTACTS + FORM -->
+    <section id="contacts" class="card section">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="ct_title">Контакты и заявка</h2>
+          <p data-i18n="ct_sub">Самый быстрый способ — WhatsApp или Telegram.</p>
+        </div>
+        <span class="pill" data-i18n="ct_pill">Работаем 24/7</span>
+      </div>
+
+      <div class="split">
+        <div class="service" style="background:rgba(255,255,255,.02)">
+          <h3 data-i18n="ct_h3">Связаться</h3>
+          <ul>
+            <li><b>Телефон / WhatsApp:</b> <a href="tel:+79824145595">+7 982 414-55-95</a></li>
+            <li><b>Telegram:</b> <a href="https://t.me/proectchina" target="_blank" rel="noopener">@proectchina</a></li>
+            <li><b>Instagram:</b> <a href="https://www.instagram.com/proectchina" target="_blank" rel="noopener">proectchina</a></li>
+            <li><b>Email:</b> <a href="mailto:Proectchina@gmail.com">Proectchina@gmail.com</a></li>
+          </ul>
+
+          <div class="hero-actions" style="margin-top:12px">
+            <a class="btn primary" id="btnWhatsApp3" target="_blank" rel="noopener" data-i18n="cta_wa3">WhatsApp</a>
+            <a class="btn" id="btnTelegram3" target="_blank" rel="noopener" data-i18n="cta_tg3">Telegram</a>
+            <a class="btn" href="mailto:Proectchina@gmail.com" data-i18n="cta_mail">Email</a>
+          </div>
+
+          <div class="note" data-i18n="ct_note">
+            Адреса складов не публикуем. Работаем через мессенджеры и по заявке.
+          </div>
+        </div>
+
+        <div class="service">
+          <h3 data-i18n="form_title">Форма заявки</h3>
+          <form id="leadForm">
+            <div class="form-row">
+              <div>
+                <label for="name" data-i18n="f_name">Имя</label>
+                <input id="name" name="name" placeholder="Казим / Иван" required />
+              </div>
+              <div>
+                <label for="phone" data-i18n="f_phone">Телефон</label>
+                <input id="phone" name="phone" placeholder="+7..." required />
+              </div>
+            </div>
+
+            <div class="form-row" style="margin-top:10px">
+              <div>
+                <label for="city" data-i18n="f_city">Город</label>
+                <input id="city" name="city" placeholder="Махачкала / Грозный..." />
+              </div>
+              <div>
+                <label for="item" data-i18n="f_item">Что нужно</label>
+                <input id="item" name="item" placeholder="Фара / фильтра / наконечники..." required />
+              </div>
+            </div>
+
+            <div style="margin-top:10px">
+              <label for="comment" data-i18n="f_comment">Комментарий (VIN / модель / год)</label>
+              <textarea id="comment" name="comment" placeholder="VIN, модель, год, фото/артикул (если есть)"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit" data-i18n="f_send">Отправить</button>
+              <button class="btn" type="button" id="sendToWhatsApp" data-i18n="f_send_wa">Отправить в WhatsApp</button>
+              <button class="btn" type="button" id="sendToTelegram" data-i18n="f_send_tg">Отправить в Telegram</button>
+              <button class="btn" type="button" id="sendToEmail" data-i18n="f_send_mail">Отправить на Email</button>
+            </div>
+
+            <div class="note" id="formNote" data-i18n="f_note">
+              Кнопка “Отправить” откроет WhatsApp с готовым текстом (самый надежный вариант без серверов).
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div>© <span id="year"></span> ProectcAuto</div>
+        <div data-i18n="foot2">Запчасти для китайских автомобилей • Китай → Россия</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ====== CONFIG ======
+    const PHONE_INT = "79824145595"; // WhatsApp requires digits only
+    const TELEGRAM_USERNAME = "proectchina";
+    const INSTAGRAM_URL = "https://www.instagram.com/proectchina";
+
+    const waLink = (text) => `https://wa.me/${PHONE_INT}?text=${encodeURIComponent(text)}`;
+    const tgLink = () => `https://t.me/${TELEGRAM_USERNAME}`;
+
+    // Prefill quick message
+    function buildMessage() {
+      const name = (document.getElementById("name").value || "").trim();
+      const phone = (document.getElementById("phone").value || "").trim();
+      const city = (document.getElementById("city").value || "").trim();
+      const item = (document.getElementById("item").value || "").trim();
+      const comment = (document.getElementById("comment").value || "").trim();
+
+      const lines = [
+        "Заявка ProectcAuto",
+        name ? `Имя: ${name}` : null,
+        phone ? `Телефон: ${phone}` : null,
+        city ? `Город: ${city}` : null,
+        item ? `Что нужно: ${item}` : null,
+        comment ? `Комментарий: ${comment}` : null,
+        "",
+        "Подскажите цену и срок. Спасибо!"
+      ].filter(Boolean);
+
+      return lines.join("\n");
+    }
+
+    // Top CTA links
+    const btnsWA = ["btnWhatsApp","btnWhatsApp2","btnWhatsApp3"].map(id => document.getElementById(id));
+    btnsWA.forEach(b => b.href = waLink("Здравствуйте! Нужны запчасти для китайского авто. VIN/модель/год: ..."));
+
+    const btnsTG = ["btnTelegram","btnTelegram2","btnTelegram3"].map(id => document.getElementById(id));
+    btnsTG.forEach(b => b.href = tgLink());
+
+    // Form action (default submit -> WhatsApp)
+    const leadForm = document.getElementById("leadForm");
+    leadForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      window.open(waLink(buildMessage()), "_blank", "noopener");
+    });
+
+    document.getElementById("sendToWhatsApp").addEventListener("click", () => {
+      window.open(waLink(buildMessage()), "_blank", "noopener");
+    });
+
+    document.getElementById("sendToTelegram").addEventListener("click", () => {
+      // Telegram deep link for message isn't reliable without bot; open chat
+      window.open(tgLink(), "_blank", "noopener");
+      document.getElementById("formNote").textContent =
+        (currentLang === "ru")
+          ? "Telegram открылся. Скопируйте текст заявки и отправьте в чат @proectchina."
+          : "Telegram opened. Copy the request text and send it to @proectchina.";
+      copyToClipboard(buildMessage());
+    });
+
+    document.getElementById("sendToEmail").addEventListener("click", () => {
+      const subject = "Заявка ProectcAuto";
+      const body = buildMessage();
+      window.location.href = `mailto:Proectchina@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+
+    function copyToClipboard(text){
+      try{
+        navigator.clipboard.writeText(text);
+      }catch(e){}
+    }
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ====== Simple i18n (RU/EN toggle) ======
+    let currentLang = "ru";
+    const dict = {
+      en: {
+        sub: "Parts from China → Russia",
+        nav_why: "Why us",
+        nav_services: "Services",
+        nav_how: "How it works",
+        nav_faq: "FAQ",
+        nav_contacts: "Contacts",
+        cta_top: "Request a quote",
+
+        pill: "24/7 • WhatsApp/Telegram • 25–35 days",
+        h1_1: "Parts for",
+        h1_2: "Chinese cars",
+        h1_3: "from China to Russia",
+        lead: "Selection by VIN/photo, inspection, consolidation in Guangzhou warehouse and delivery to Russia. OEM, aftermarket and used OEM.",
+        cta_wa: "Message on WhatsApp",
+        cta_tg: "Message on Telegram",
+        cta_services: "View services",
+        brands: "Brands: Geely • Changan • Haval • Li • ZEEKR • Chery",
+        geo: "Russia & CIS • Focus: North Caucasus",
+
+        mini_title: "Who we are",
+        mini_text: "My name is Kazim. I live in Guangzhou and with a professional team we source and ship parts for Chinese cars on demand.",
+        kpi_1: "days average from warehouse",
+        kpi_2a: "OEM / Aftermarket",
+        kpi_2b: "for your budget",
+        kpi_3a: "Single / Container",
+        kpi_3b: "any volume",
+        kpi_4a: "Inspection",
+        kpi_4b: "before shipping",
+        mini2_title: "Quick request",
+        mini2_text: "Send VIN / model / year / needed parts — we reply fast.",
+        cta_wa2: "WhatsApp",
+        cta_tg2: "Telegram",
+
+        why_title: "Why ProectcAuto",
+        why_sub: "Simple: fast contact, accurate selection, reliable shipping.",
+        why_pill: "Guangzhou • Verified suppliers",
+        f1_t: "Direct suppliers",
+        f1_d: "We work with verified factories and sellers in China.",
+        f2_t: "Our own warehouse",
+        f2_d: "We consolidate, sort, pack — clean process.",
+        f3_t: "Selection by VIN",
+        f3_d: "VIN/photo/catalog to avoid mismatches.",
+        f4_t: "Any volume",
+        f4_d: "From one part to container shipments.",
+        f5_t: "For your budget",
+        f5_d: "OEM, aftermarket, used OEM — as needed.",
+        f6_t: "24/7 support",
+        f6_d: "WhatsApp / Telegram / Email — quick replies.",
+
+        srv_title: "Services",
+        srv_sub: "You send a request — we deliver turnkey.",
+        srv_pill: "Price: on request",
+        s1_t: "Body parts",
+        s1_1: "Bumpers, fenders, doors",
+        s1_2: "Lights: headlights, taillights",
+        s1_3: "Plastics, brackets, trims",
+        s1_4: "Selection by VIN/photo",
+        s1_tag: "For Geely / Changan / Haval / Li / ZEEKR / Chery and more",
+
+        s2_t: "Parts & consumables",
+        s2_1: "Filters, spark plugs, belts",
+        s2_2: "Steering/suspension parts",
+        s2_3: "Brake system",
+        s2_4: "OEM / Aftermarket / Used OEM",
+        s2_tag: "Options by budget and timing",
+
+        s3_t: "Sourcing on demand",
+        s3_1: "By VIN and trim",
+        s3_2: "By photo/marking",
+        s3_3: "Multiple price options",
+        s3_4: "Compatibility guidance",
+        s3_tag: "Reduce ordering errors",
+
+        s4_t: "Logistics & delivery",
+        s4_1: "Receiving in Guangzhou warehouse",
+        s4_2: "Consolidation, sorting, packing",
+        s4_3: "Delivery to Russia",
+        s4_4: "25–35 days from warehouse",
+        s4_tag: "Single items or containers",
+
+        how_title: "How it works",
+        how_sub: "5 steps — parts delivered.",
+        how_pill: "Send VIN / model / year",
+        st1_t: "Request",
+        st1_d: "Send VIN / model / year / parts list.",
+        st2_t: "Selection",
+        st2_d: "Choose OEM/aftermarket/used OEM.",
+        st3_t: "Approval",
+        st3_d: "Agree price, timing and delivery.",
+        st4_t: "Warehouse",
+        st4_d: "Receive, inspect, pack.",
+        st5_t: "Shipping",
+        st5_d: "Delivery to Russia in ~25–35 days.",
+
+        proof_title: "Cases & facts",
+        proof_sub: "We’ll replace placeholders with real photos/cases later.",
+        proof_pill: "Private clients, service centers and taxi fleets",
+        c1_t: "Taxi fleet",
+        c1_d: "Regular supplies of consumables and suspension items.",
+        c2_t: "Body parts on demand",
+        c2_d: "Selection, inspection, packing, delivery.",
+        c3_t: "Service center",
+        c3_d: "We close the whole parts list in one shipment.",
+        proof_note: "Note: we’ll add real reviews/screenshots when you provide materials.",
+
+        faq_title: "FAQ",
+        faq_sub: "Short and clear.",
+        q1: "Can I order a single part?",
+        a1: "Yes. We do single items and wholesale/containers.",
+        q2: "Do you have OEM parts?",
+        a2: "Yes. Also quality aftermarket and used OEM.",
+        q3: "Selection by VIN?",
+        a3: "Yes — to avoid mismatch.",
+        q4: "Delivery time?",
+        a4: "25–35 days from our Guangzhou warehouse.",
+        q5: "Which brands do you work with?",
+        a5: "Geely, Changan, Haval, Li, ZEEKR, Chery and others.",
+        q6: "Fastest way to get a quote?",
+        a6: "Message WhatsApp/Telegram: VIN, model, year, parts list.",
+
+        ct_title: "Contacts & request",
+        ct_sub: "Fastest way — WhatsApp or Telegram.",
+        ct_pill: "24/7",
+        ct_h3: "Contact",
+        cta_wa3: "WhatsApp",
+        cta_tg3: "Telegram",
+        cta_mail: "Email",
+        ct_note: "We don’t publish warehouse addresses. We work via messenger and request.",
+
+        form_title: "Request form",
+        f_name: "Name",
+        f_phone: "Phone",
+        f_city: "City",
+        f_item: "What do you need",
+        f_comment: "Comment (VIN / model / year)",
+        f_send: "Send",
+        f_send_wa: "Send to WhatsApp",
+        f_send_tg: "Send to Telegram",
+        f_send_mail: "Send to Email",
+        f_note: "The main “Send” button opens WhatsApp with a ready message (most reliable without servers).",
+
+        foot2: "Parts for Chinese cars • China → Russia",
+      }
+    };
+
+    function setLang(lang){
+      currentLang = lang;
+      document.getElementById("langBtn").textContent = (lang === "ru") ? "RU / EN" : "EN / RU";
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if(lang === "en" && dict.en[key]) el.textContent = dict.en[key];
+        if(lang === "ru"){
+          // RU is the default text already in HTML
+          // no-op
+        }
+      });
+
+      // reset note when switching
+      const note = document.getElementById("formNote");
+      note.textContent = (lang === "en")
+        ? dict.en.f_note
+        : "Кнопка “Отправить” откроет WhatsApp с готовым текстом (самый надежный вариант без серверов).";
+    }
+
+    document.getElementById("langBtn").addEventListener("click", () => {
+      setLang(currentLang === "ru" ? "en" : "ru");
+    });
+  </script>
+</body>
+</html>
